@@ -48,9 +48,9 @@
 	minOneOf(neighbors(),{
 		count(zombiesOn(it))
 		})  
-		
+```
 可以被写成：  
-
+```java
 	minOneOf(neighbors()){
 		count(zombiesOn(it))
 		}  
@@ -136,7 +136,7 @@
 				size = 2
 			}
 		}
-		```
+```
 我们首先简要说明一下这段代码做了什么。利用初始化代码重置模拟是个好想法，所以我们“clearAll”世上存在的实体。然后我们定义人类与僵尸的默认形状，通过创造不同的数值的基本类型。我们也将创造出的智能体随机散布到世界各地，并将僵尸的大小设置为2，使其看起来更显著。
 
 更深入一些说，@setup是一个注释，这向系统表明，这个method应当在系统开始运行时就运行。setDefaultShape是一个基本类型，有两个参数。第一个参数是智能体类型，第二个是定义智能体形状的字符串。想了解那些形状是可以用的话，就点击左侧“shape”文件夹，就可以看到relogo project里所有的默认形状。如果只简单的设置了第一个参数（智能体名字），那么智能体会设置成默认形状。
@@ -153,7 +153,7 @@
 			ask (humans()){
 				step()
 			}
-		```
+```
 正如所见，我们已经完成了定义智能体行为中最难的工作。“@go”这个注释告诉系统，系统每运行一个单位时间，就要重复运行一次@go method。检测器所做的就是让human以及zombie智能体类执行他们的step method——这个功能通过“ask”基本类型来完成。一个relogo实体可以ask另一个或是另一组实体做一些事情，通过指定ask基本类型后的对象。在这种情况下，zombies和humans基本类型会各自返回一组僵尸和人类智能体。
 
 我们现在的代码看起来像是这样：
@@ -189,11 +189,11 @@
 ```java
 		addSliderWL("numHumans","Number of Humans",1,1,100,50)
 		addSliderWL("numZombies","Number of Zombies",1,1,10,5)
-		```
+```
 在模拟时，我们希望知道当前还剩余多少人类，于是我们用到了monitor监视器，代码如下：
 ```java
 		addMonitorWL("remainingHumans","Remaining Humans",5)
-		```
+```
 monitor第一个参数是“UserObserver”中一个method的名字，第二个参数是显示在monitor的标签，第三个参数定义多久更新一次monitor。5意味着每5回合更新一次。为了知道剩余人类的数量，我们对“UserObserver”的代码做了一点改进。
 现在整个代码看起来像是这样：
 ```java
@@ -253,7 +253,7 @@ monitor第一个参数是“UserObserver”中一个method的名字，第二个�
 				label = ""
 			}
 		}
-	```
+```
 这些修改达成了这样的效果——如果僵尸找到了一个人类，它除了会感染人类，还会在二者之间创造一条Infection连接。当感染者死亡后，Infection连接就自动移除，因而新孵化的僵尸将不会有任何连接。当新建连接类型时我们需要通过定义新的method来得到新连接的数量，这和当我们当初定义智能体类型时指定method是差不多的。“createInfectionTo”就是这样一个method。
 
 我们也想要把孕育僵尸的周期加进模型玩玩儿，就比如说人类从死亡再变成僵尸的这段时间，可以让我们看到一个在感染者死亡前的感染网络。我们把gestationPeriod变量作为一个slide模块加入代码，看起来像是这样：
@@ -264,7 +264,7 @@ monitor第一个参数是“UserObserver”中一个method的名字，第二个�
 			addSliderWL("gestationPeriod", "Gestation",5,1,30,5)
 			addMonitorWL("remainingHumans","Remaining Humans",5)
 		}
-	```
+```
 并且我们还稍稍改进了一下human智能体的代码：
 ```java
 	class Human extends ReLogoTurtle {
