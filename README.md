@@ -295,11 +295,11 @@ monitor第一个参数是“UserObserver”中一个method的名字，第二个�
 
 现在我们已经运行过模型，我们将继续探索如何输出数据组，甚至更进一步，使用一些额外的扩展插件。现在我们启动模型，启动后我们将目光移到左侧的scenario tree并照着下面的步骤一步一步执行：  
 
-（1）右键点击data sets label 并选择add datasets；
-（2）在data sets编辑器中的data set ID一栏中填入Agent Counts，并在data set type的下拉菜单里选择Aggregate；
-（3）下面的步骤我们将指定standard source来存放我们的数据组，这一步不用修改任何东西，保持默认；
-（4）接下来，选定method data source，点击add按钮增加一列。在source name一栏键入“Remaining Humans”，在agent type中选择Human，并在aggregate operation中选择count；
-（5）再次点击add，这次在source name一栏键入“Remaining Zombies”，在agent type中选择Zombie, 并在aggregate operation中选择count。
+（1）右键点击data sets label 并选择add datasets；  
+（2）在data sets编辑器中的data set ID一栏中填入Agent Counts，并在data set type的下拉菜单里选择Aggregate；   
+（3）下面的步骤我们将指定standard source来存放我们的数据组，这一步不用修改任何东西，保持默认；  
+（4）接下来，选定method data source，点击add按钮增加一列。在source name一栏键入“Remaining Humans”，在agent type中选择Human，并在aggregate operation中选择count；  
+（5）再次点击add，这次在source name一栏键入“Remaining Zombies”，在agent type中选择Zombie, 并在aggregate operation中选择count。  
 
 点击next，再点击finish，通过左上角的保存按钮保存设置。
 
