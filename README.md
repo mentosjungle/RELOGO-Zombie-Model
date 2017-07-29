@@ -1,6 +1,6 @@
 # RELOGO-Zombie-Model
->using repast simphony to simulate the zombie chasing human  
->>最近自学repast simphony，发觉网上尚未有中文指南，自己翻译了一下，原件为官方指南《RELOGO Getting started》，已翻译五分之四的内容，后续部分还在学习中，后续抽空补上。  
+> * using repast simphony to simulate the zombie chasing human  
+> * 最近自学repast simphony，发觉网上尚未有中文指南，自己翻译了一下，原件为官方指南《RELOGO Getting started》，已翻译五分之四的内容，后续部分还在学习中，后续抽空补上。  
 
 ## 0 开始之前  
 
