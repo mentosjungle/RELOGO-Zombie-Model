@@ -1,6 +1,7 @@
 # RELOGO-Zombie-Model
-using repast simphony to simulate the zombie chasing human  
-自学repast simphony，发觉网上尚未有中文指南，自己翻译了一下，原件为官方指南《RELOGO Getting started》，已翻译五分之四的内容，后续部分还在学习中，后续抽空补上。  
+using repast simphony to simulate the zombie chasing human  
+---------
+自学repast simphony，发觉网上尚未有中文指南，自己翻译了一下，原件为官方指南《RELOGO Getting started》，已翻译五分之四的内容，后续部分还在学习中，后续抽空补上。  
 
 0.开始之前  
 --
@@ -15,7 +16,7 @@ using repast simphony to simulate the zombie chasing human
 我们接下来所看到的就是zombies项目的文件夹，包括“str”子文件夹，“zombies.relogo”文件包以及相关的relogo文档，还有“shapes”文件夹，这些都是我们生成的项目文件。  
 
 1.1创建人类与僵尸的智能体类型  
-##
+
 现在我们已经使所有的模型结构就位，我们可以开始指定zombie模型的细节了。首先，因为僵尸喜欢追逐人类，我们构建人类智能体的类型。单击选定“zombies.relogo”文件包，如果没有选定，点击工具栏上的“new turtle”按钮，此时系统会弹出新智能体引导窗口，让我们指定新智能体类型的名字。如果我们先前已经选定了“zombie.relogo”文件包，我们只需简单的在“name”栏中填上“human”并且点击finish按钮。现在新建的human智能体已经呈现在我们面前。  
 
 1.2定义人类与僵尸的行为模式  
