@@ -3,11 +3,11 @@ using repast simphony to simulate the zombie chasing human  
 
 最近自学repast simphony，发觉网上尚未有中文指南，自己翻译了一下，原件为官方指南《RELOGO Getting started》，已翻译五分之四的内容，后续部分还在学习中，后续抽空补上。  
 
-# 0.开始之前  
+## 0 开始之前  
 
 在使用repast symphony前我们需要确定已经正确安装了最新版本。下载及安装指南可以在官方网站上找到。repast symphony要求系统已安装Java 8。Java也可以在官网上自行下载。  
 	
-# 1.开始RELOGO  
+## 1 开始RELOGO  
 
 现在让我们开始说明relogo。我们将会构建一个基于智能体的模型（僵尸追，人类逃）作为案例。我们并不是要吓你，只是为了尽可能清楚地解释每一个步骤。当这一章节结束时，我们将覆盖使用过程中的方方面面并且你将可以利用relogo开展你自己的探索。  
 
@@ -15,11 +15,11 @@ using repast simphony to simulate the zombie chasing human  
 
 我们接下来所看到的就是zombies项目的文件夹，包括“str”子文件夹，“zombies.relogo”文件包以及相关的relogo文档，还有“shapes”文件夹，这些都是我们生成的项目文件。  
 
-## 1.1创建人类与僵尸的智能体类型  
+### 1.1 创建人类与僵尸的智能体类型  
 
 现在我们已经使所有的模型结构就位，我们可以开始指定zombie模型的细节了。首先，因为僵尸喜欢追逐人类，我们构建人类智能体的类型。单击选定“zombies.relogo”文件包，如果没有选定，点击工具栏上的“new turtle”按钮，此时系统会弹出新智能体引导窗口，让我们指定新智能体类型的名字。如果我们先前已经选定了“zombie.relogo”文件包，我们只需简单的在“name”栏中填上“human”并且点击finish按钮。现在新建的human智能体已经呈现在我们面前。  
 
-## 1.2定义人类与僵尸的行为模式  
+### 1.2 定义人类与僵尸的行为模式  
 
 构建模型的下一步是定义human和zombie的智能体行为模式。每个human智能体都会有一个step method（行走函数），看起来像这样：  
 
@@ -120,7 +120,7 @@ using repast simphony to simulate the zombie chasing human  
 
 不难发现，在step method中我们另外设置了infect作为辅助method，它有一个参数，引用自human智能体。让我们探索一下它是如何使用的。这里使用了基本类型“count”和“humansHere”，来看是否有任何human智能体在“Here”。如果有，我们就定义默认的智能体属性“label”为“brains!”，并且感染其中一个人类。为了感染这个人类，我们在一个时期后将human智能体的“infected”属性变为“true”。
 
-## 1.3利用用户观察模块协调行为  
+### 1.3 用用户观察模块协调行为  
 
 现在我们已经定义了human和zombie两个智能体，接下来我们要做的就是定义模型的全部流程。这里我们使用“observer”来达成这个目的。当我们创建zombie project后，“UserObserver”是一个默认的观测类型，双击左侧的UserObserver.groovy，我们进入文件包浏览器。定义一个method的语法在relogo中是通用的，我们定义“setup”method如下：
 
@@ -183,7 +183,7 @@ using repast simphony to simulate the zombie chasing human  
 		}
 	}
 
-## 1.4创建图形控制与显示组件  
+### 1.4 创建图形控制与显示组件  
 
 我们已经制定了智能体行为模式与模型所有流程，现在我们要加入一些图形控制组件。于此有关的文件是“UserGlobalAndPanelFactory.groovy”。打开这个文件我们看到一些可能有帮助的可用组件。为了完成这个列表，我们通过标签创建了滑动组件（就是上面所说的slider模块），以此控制“UserObserver”中的“numHumans”以及“numZombies”两个变量，代码如下：
 
@@ -224,13 +224,13 @@ monitor第一个参数是“UserObserver”中一个method的名字，第二个�
 			}
 	}
 
-## 1.5运行僵尸模型  
+### 1.5 运行僵尸模型  
 
 下一步就是看看我们制作至今的模型运行后究竟会发生什么。点击左上方工具栏内的小三角形、绿色的开始按钮，并在下拉菜单中选择“zombies model”选项，这会启动repast simphony runtime程序。接下来点击初始化按钮使得模型的缓存清空。
 
 左侧的用户操作界面有我们设置的图形组件。点击step按钮，模型会运行一个单位时间。这时候我们可以反复点击step按钮观察结果，也可以点击play按钮让模型自动运行，直到我们按下pause或者stop按钮。无论何时我们想重置模型，只需要点击reset按钮即可。如果我们想要改进或是在模型中添加代码，则必须关闭repast simphony runtime程序，并在修正完毕后重新启动。
 
-## 1.6为僵尸模型添加连接  
+### 1.6 为僵尸模型添加连接  
 
 在这一小节我们将介绍如何为模型添加连接。我们新建名为“Infection”的连接类型，以此追踪究竟是哪个僵尸智能体感染了哪个人类智能体。这个操作和前文创建human以及 zombie智能体的操作相似——单击选择“zombies.relogo”文件包，并点击工具栏的“new link”按钮。这时系统会弹出new link导引，让我们可以指定我们link的名字。我们在name栏里填入“Infection”并点击finish按钮。
 现在我们稍稍改进一下zombie模型的step method，看起来像是这样：
@@ -290,7 +290,7 @@ monitor第一个参数是“UserObserver”中一个method的名字，第二个�
 
 现在运行我们的模型，当我们增加孕育周期时可以看到更大的感染连接网络形成了。
 
-## 1.7数据组，输出以及外部插件
+### 1.7 数据组，输出以及外部插件
 
 现在我们已经运行过模型，我们将继续探索如何输出数据组，甚至更进一步，使用一些额外的扩展插件。现在我们启动模型，启动后我们将目光移到左侧的scenario tree并照着下面的步骤一步一步执行：  
 
